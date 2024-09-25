@@ -1,0 +1,29 @@
+<div id="header">
+  <h5>Simple Airbnb</h5>
+  <p> <%= link_to "Add flat", new_flat_path %> </p>
+</div>
+
+<div class="container mt-3">
+  <div class="row">  
+    <h2>All our Flats (<%= @flats.count %>)</h2>
+  </div>
+  <div class="row flats-list">
+    <% @flats.each do |flat| %>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="flat-card">
+        <div class="flat-info">
+          <p><%= flat.name %></p>
+          <p><%= flat.address %></p>
+          <p> Guests: <%= flat.number_of_guests %>  |  Price: £<%= flat.price_per_night %></p>
+          <p>
+            <%= link_to "More info", flat_path(flat) %>
+            <%= link_to "Edit", edit_flat_path(flat) %>
+            <%= link_to "Remove", flat_path(flat),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

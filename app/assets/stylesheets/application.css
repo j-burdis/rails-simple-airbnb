@@ -13,3 +13,71 @@
  *= require_tree .
  *= require_self
  */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(235, 233, 233);
+  align-items: center;
+}
+
+.flat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.flats-list {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.flat-info {
+  flex-grow: 1;
+}
+
+.row.flats-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.flats-list > .col-12, 
+.row.flats-list > .col-md-6, 
+.row.flats-list > .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.flat-info p {
+  margin-bottom: 10px;
+}
+
+.flat-info a {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.flat-info a:hover {
+  text-decoration: underline; 
+}
+
+.flat-info p:first-child {
+  font-size: 1.4em; /* Adjust this size as needed */
+  font-weight: 500; /* Optional: make the text bold */
+  margin-bottom: 10px; /* Optional: space below the name */
+}
